@@ -8,7 +8,7 @@ import(
 
 func newParticle() (Particle){
 	//Creation of variables for the color, position and speed of a particle
-	var px,py float64
+	var px,py,sx,sy float64
 
 	//Spawn configuration
 	if config.General.RandomSpawn{
@@ -18,6 +18,10 @@ func newParticle() (Particle){
 		px = float64(config.General.SpawnX)
 		py = float64(config.General.SpawnY)
 	}
+
+	//Speed configuration
+	sx,sy = rand.NormFloat64()-rand.NormFloat64(),rand.NormFloat64()-rand.NormFloat64() //choose a random number between -1 and 1 for the particle speed 
+
 	//creates and returns a particle
 	return Particle{
 		PositionX: px,
@@ -26,5 +30,7 @@ func newParticle() (Particle){
 		ScaleX:    1, ScaleY: 1,
 		ColorRed: 1, ColorGreen: 1, ColorBlue: 1,
 		Opacity: 1,
+		SpeedX : sx,
+		SpeedY : sy,
 	}
 }
