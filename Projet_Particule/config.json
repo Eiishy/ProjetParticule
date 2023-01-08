@@ -1,12 +1,13 @@
 {
 	"WindowTitle": "Project particles",
 	"WindowSizeX": 800,
-  "WindowSizeY": 600,
+  	"WindowSizeY": 800,
 	"ParticleImage": "assets/particle.png",
 	"Debug": true,
-	"InitNumParticles": 10,
-	"RandomSpawn": true,
+	"InitNumParticles": 5000,
+	"RandomSpawn": false,
 	"SpawnX": 400,
 	"SpawnY": 400,
-	"SpawnRate": 1
+	"SpawnRate": 0.25,
+	"Gamemod"  : 2
 }
