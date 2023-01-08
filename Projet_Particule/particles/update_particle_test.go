@@ -11,7 +11,7 @@ func init() {
 }
 
 func Test_Particle_In_Movement(t *testing.T) {
-	//This function tests if the correct number of particles is added to the system at each call of the update function
+	//This function tests if a particle is in movement
 	p := newParticle()
 	px_init,py_init := p.PositionX,p.PositionY
 	p.update()

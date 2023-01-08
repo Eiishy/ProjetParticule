@@ -8,6 +8,6 @@
 	"RandomSpawn": false,
 	"SpawnX": 400,
 	"SpawnY": 400,
-	"SpawnRate": 0,
-	"Gamemod"  : 1
+	"SpawnRate": 0.25,
+	"Gamemod"  : 2
 }

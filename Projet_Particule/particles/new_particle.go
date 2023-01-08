@@ -8,7 +8,7 @@ import(
 
 
 func newParticle() (Particle){
-	//Creation of variables for the color, position and speed of a particle
+	//Creation of variables position and speed of a particle
 	var px,py,sx,sy float64
 
 	//Spawn configuration
@@ -28,7 +28,7 @@ func newParticle() (Particle){
 		sx = rand.NormFloat64()-rand.NormFloat64()
 		sy = rand.NormFloat64()-rand.NormFloat64() 
 	}else if config.General.Gamemod == 2 {
-		//to create a circle but need RandomSpawn on false and initNumParticles more than 500 and the Gamemod on 2 set in the config.json file 
+		//to create a circle but need RandomSpawn false and initNumParticles more than 500 and the Gamemod on 2 set in the config.json file 
 		a :=rand.Float64() * 2 * math.Pi
 		sx = math.Cos(a)  * 2
 		sy = math.Sin(a)  * 2
