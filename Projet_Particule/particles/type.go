@@ -7,6 +7,7 @@ import "container/list"
 // évoluer durant votre projet.
 type System struct {
 	Content *list.List
+	SpawnValue float64 
 }
 
 // Particle définit une particule.

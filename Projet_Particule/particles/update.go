@@ -7,12 +7,14 @@ import (
 )
 
 func (s *System) Update() {
-	//we update each particle of the system 
+	//update each particle of the system 
 	for e := s.Content.Front(); e != nil; e = e.Next() {
 		p:=e.Value.(*Particle)
 		p.update()
 	}
 
+	//Generate more particles
+    s.spawnUpdate()
 
 	//to close the window with the escape key
 	if inpututil.IsKeyJustReleased(ebiten.KeyEscape){

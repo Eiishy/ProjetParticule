@@ -3,6 +3,7 @@ package particles
 import(
 	"project-particles/config"
 	"math/rand"
+	"math"
 ) 
 
 
@@ -11,16 +12,28 @@ func newParticle() (Particle){
 	var px,py,sx,sy float64
 
 	//Spawn configuration
+	//Spawn choose randomly 
 	if config.General.RandomSpawn{
 		px = float64(rand.Intn(config.General.WindowSizeX - 10))
 		py = float64(rand.Intn(config.General.WindowSizeY -10))
+	//Spawn in the center of the screen 
 	}else{
 		px = float64(config.General.SpawnX)
 		py = float64(config.General.SpawnY)
 	}
 
 	//Speed configuration
-	sx,sy = rand.NormFloat64()-rand.NormFloat64(),rand.NormFloat64()-rand.NormFloat64() //choose a random number between -1 and 1 for the particle speed 
+	if config.General.Gamemod == 1 {
+		//choose a random number between -1 and 1 for the particle speed 
+		sx = rand.NormFloat64()-rand.NormFloat64()
+		sy = rand.NormFloat64()-rand.NormFloat64() 
+	}else if config.General.Gamemod == 2 {
+		//to create a circle but need RandomSpawn on false and initNumParticles more than 500 and the Gamemod on 2 set in the config.json file 
+		a :=rand.Float64() * 2 * math.Pi
+		sx = math.Cos(a)  * 2
+		sy = math.Sin(a)  * 2
+	}
+	
 
 	//creates and returns a particle
 	return Particle{
