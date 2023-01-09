@@ -6,8 +6,7 @@
 	"Debug": true,
 	"InitNumParticles": 5000,
 	"RandomSpawn": false,
-	"SpawnX": 400,
-	"SpawnY": 400,
 	"SpawnRate": 0.25,
-	"Gamemod"  : 2
+	"Gamemod"  : 1,
+	"FullScreen": true
 }

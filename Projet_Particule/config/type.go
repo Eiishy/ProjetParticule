@@ -14,9 +14,9 @@ type Config struct {
 	Debug                    bool
 	InitNumParticles         int
 	RandomSpawn              bool
-	SpawnX, SpawnY           int
 	SpawnRate                float64
 	Gamemod  			     int 
+	FullScreen 				 bool
 }
 
 var General Config

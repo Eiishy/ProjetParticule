@@ -20,3 +20,4 @@ func Test_Particle_In_Movement(t *testing.T) {
 		t.Log("\nBefore --> ",px_init, " : ", py_init,"\nAfter --> ",p.PositionX," : ",p.PositionY)
 	}
 }
+

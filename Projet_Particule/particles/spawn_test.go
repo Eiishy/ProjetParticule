@@ -6,7 +6,7 @@ import (
 )
 
 func init() {
-	//his function is executed at the start of the tests and allows to recover the data of the config.json
+	//this function is executed at the start of the tests and allows to recover the data of the config.json
 	config.Get("../config.json")
 }
 

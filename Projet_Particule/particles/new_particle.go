@@ -18,8 +18,8 @@ func newParticle() (Particle){
 		py = float64(rand.Intn(config.General.WindowSizeY -10))
 	//Spawn in the center of the screen 
 	}else{
-		px = float64(config.General.SpawnX)
-		py = float64(config.General.SpawnY)
+		px = float64(config.General.WindowSizeX/2)
+		py = float64(config.General.WindowSizeY/2)
 	}
 
 	//Speed configuration
