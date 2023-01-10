@@ -4,9 +4,11 @@
   	"WindowSizeY": 800,
 	"ParticleImage": "assets/particle.png",
 	"Debug": true,
-	"InitNumParticles": 5000,
+	"InitNumParticles": 0,
 	"RandomSpawn": false,
-	"SpawnRate": 0.25,
+	"SpawnRate": 1,
 	"Gamemod"  : 1,
-	"FullScreen": true
+	"FullScreen": true,
+	"Gravity":  false
+
 }

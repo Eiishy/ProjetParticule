@@ -17,6 +17,7 @@ type Config struct {
 	SpawnRate                float64
 	Gamemod  			     int 
 	FullScreen 				 bool
+	Gravity 				 bool
 }
 
 var General Config

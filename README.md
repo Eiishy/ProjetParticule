@@ -43,6 +43,7 @@ go build
 > - SpawnRate | Nombre de particule a chaque appel de la fonction update(60/s)
 > - InitNumParticles | Le nombre de particule à l'écran au démarrage
 > - RandomSpawn | Apparition des particules à un endroit aléatoire (true/false)
+> - Gravity | Rajoute un effet de gravité au particules (true/false)
 > ### <ins>Gamemod</ins>
 > - 0 Pour des particules imobiles
 > - 1 Pour des particules avec une vitesse aléatoire 

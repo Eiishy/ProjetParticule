@@ -26,12 +26,12 @@ func newParticle() (Particle){
 	if config.General.Gamemod == 1 {
 		//choose a random number between -1 and 1 for the particle speed 
 		sx = rand.NormFloat64()-rand.NormFloat64()
-		sy = rand.NormFloat64()-rand.NormFloat64() 
+		sy = rand.NormFloat64()-rand.NormFloat64()  
 	}else if config.General.Gamemod == 2 {
 		//to create a circle but need RandomSpawn false and initNumParticles more than 500 and the Gamemod on 2 set in the config.json file 
 		a :=rand.Float64() * 2 * math.Pi
 		sx = math.Cos(a)  * 2
-		sy = math.Sin(a)  * 2
+		sy = math.Sin(a)  * 2 
 	}
 	
 
