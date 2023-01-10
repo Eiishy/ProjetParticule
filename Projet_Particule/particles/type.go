@@ -21,4 +21,5 @@ type Particle struct {
 	ColorRed, ColorGreen, ColorBlue float64
 	Opacity                         float64
 	SpeedX,SpeedY 					float64
+	Alive 							bool //It indicates if the particle is Alive
 }

@@ -45,5 +45,6 @@ func newParticle() (Particle){
 		Opacity: 1,
 		SpeedX : sx,
 		SpeedY : sy,
+		Alive : true,
 	}
 }

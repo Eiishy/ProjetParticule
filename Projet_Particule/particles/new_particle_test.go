@@ -24,7 +24,7 @@ func Test_Position_Random(t *testing.T) {
 
 func Test_Spawn_OK(t *testing.T){
 	/*This function tests if a particle creates spawn to the chosen coordinates*/
-	if config.General.RandomSpawn == false{
+	if !config.General.RandomSpawn{
 		p1 := newParticle()
 		if p1.PositionX != float64(config.General.WindowSizeX/2) && p1.PositionY != float64(config.General.WindowSizeY/2){
 			t.Error("Particles do not spawn at the chosen coordinates")
