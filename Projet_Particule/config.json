@@ -7,7 +7,9 @@
 	"InitNumParticles": 5000,
 	"RandomSpawn": false,
 	"SpawnRate": 1,
-	"Gamemod"  : 1,
+	"Gamemod"  : 2,
 	"FullScreen": true,
-	"Gravity":  false
+	"Gravity":  true,
+	"LiveSpanActivator":true,
+	"LiveSpan":  60
 }

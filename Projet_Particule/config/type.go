@@ -18,6 +18,8 @@ type Config struct {
 	Gamemod  			     int 
 	FullScreen 				 bool
 	Gravity 				 bool
+	LiveSpanActivator		 bool
+	LiveSpan 				 float64
 }
 
 var General Config

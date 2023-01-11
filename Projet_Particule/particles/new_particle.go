@@ -46,5 +46,6 @@ func newParticle() (Particle){
 		SpeedX : sx,
 		SpeedY : sy,
 		Alive : true,
+		LiveSpan : config.General.LiveSpan,
 	}
 }

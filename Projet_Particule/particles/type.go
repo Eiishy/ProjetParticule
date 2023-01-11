@@ -22,4 +22,5 @@ type Particle struct {
 	Opacity                         float64
 	SpeedX,SpeedY 					float64
 	Alive 							bool //It indicates if the particle is Alive
+	LiveSpan 						float64
 }

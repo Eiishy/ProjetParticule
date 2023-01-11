@@ -44,6 +44,8 @@ go build
 > - InitNumParticles | Le nombre de particule à l'écran au démarrage
 > - RandomSpawn | Apparition des particules à un endroit aléatoire (true/false)
 > - Gravity | Rajoute un effet de gravité au particules (true/false)
+> - LiveSpanActivator | Active une durée de vie pour les particules (true/false)
+> - LiveSpan | Définit la durée de vie des particules (60 pour 1s)
 > ### <ins>Gamemod</ins>
 > - 0 Pour des particules imobiles
 > - 1 Pour des particules avec une vitesse aléatoire 
