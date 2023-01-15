@@ -12,9 +12,11 @@ func (s *System) spawnUpdate() {
 	If the spawnvalue is greater than one then we create particles and we keep only the decimal part
 	This method is called in the update function which is run 60 times per second
 	*/
-	s.SpawnValue += config.General.SpawnRate
-	if s.SpawnValue >= 1{
-		s.add_number(int(s.SpawnValue))							
-		_, s.SpawnValue = math.Modf(s.SpawnValue)
+	if s.Content.Len()< config.General.NumMaxParticles{
+		s.SpawnValue += config.General.SpawnRate
+		if s.SpawnValue >= 1{
+			s.add_number(int(s.SpawnValue))							
+			_, s.SpawnValue = math.Modf(s.SpawnValue)
+	}
 	}
 }

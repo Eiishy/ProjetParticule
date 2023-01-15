@@ -13,6 +13,7 @@ type Config struct {
 	ParticleImage            string
 	Debug                    bool
 	InitNumParticles         int
+	NumMaxParticles 	     int
 	RandomSpawn              bool
 	SpawnRate                float64
 	Gamemod  			     int 
@@ -20,6 +21,11 @@ type Config struct {
 	Gravity 				 bool
 	LiveSpanActivator		 bool
 	LiveSpan 				 float64
+	RandomColor 			 bool
+	RandomOpacity 			 bool
+	RandomScale  			 bool
+	OpacityManagementMode    int
+	RandomRotation			 bool
 }
 
 var General Config
