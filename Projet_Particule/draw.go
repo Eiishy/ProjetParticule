@@ -29,7 +29,8 @@ func (g *game) Draw(screen *ebiten.Image) {
 	}
 
 	if config.General.Debug {
-		ebitenutil.DebugPrint(screen, fmt.Sprint("Frame : ",ebiten.ActualTPS()," | Particles :  ", g.system.Content.Len()," | Gamemod : ",config.General.Gamemod))
+		ebitenutil.DebugPrintAt(screen, fmt.Sprint("Frame : ",ebiten.ActualTPS()," | Particles :  ", g.system.Content.Len()," | Gamemod : ",config.General.Gamemod),0,0)
+		ebitenutil.DebugPrintAt(screen, fmt.Sprint("Alive Particles : ",g.system.AliveParticleCounter," | Death Particles : ",g.system.DeadParticleCounter),0,20,)
 	}
 
 }

@@ -23,18 +23,13 @@ func newParticle() (Particle){
 		LiveSpan : config.General.LiveSpan,
 	}
 	//Particle configuration
-	p.randomColor() // choose random color for the particle if the option is set on true
-	p.randomOpacity() //choose a random opacity between 30% and 100% if the option is set on true
-	p.randomScale() //choose a random scale x and y between 75% and 100% if the option is set on true
-	p.randomSpawn() // Spawn choose randomly if the option is set on true
-	p.randomRotation() //choose a random Rotation if the option is set on true
+	p.color() // choose random color for the particle if the option is set on true
+	p.opacity() //choose a random opacity between 30% and 100% if the option is set on true
+	p.scale() //choose a random scale x and y between 75% and 100% if the option is set on true
+	p.spawn() // Spawn choose randomly if the option is set on true
+	p.rotation() //choose a random Rotation if the option is set on true
+	p.speed() //change the speedtype depending on gamemod setting 
+
 	//Return the particle
 	return p
-
-	/* }else if config.General.Gamemod == 2 {
-		//to create a circle but need RandomSpawn false and initNumParticles more than 500 and the Gamemod on 2 set in the config.json file 
-		a :=rand.Float64() * 2 * math.Pi
-		sx = math.Cos(a)  * 2
-		sy = math.Sin(a)  * 2 
-	} */
 }

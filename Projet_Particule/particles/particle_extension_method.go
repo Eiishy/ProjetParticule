@@ -3,6 +3,8 @@ package particles
 import(
 	"project-particles/config"
 	"math/rand"
+	"math"
+	"github.com/hajimehoshi/ebiten/v2"
 ) 
 
 //5.1
@@ -31,47 +33,87 @@ func (p *Particle) updateLiveSpan(){
 }
 //5.4
 //s to change the specs of a particle at its creation
-func (p *Particle) randomColor(){
+func (p *Particle) color(){
+	/*
+	This fonction change the color of the particle before drawing it according to the setting
+	*/
 	if config.General.RandomColor{
 		p.ColorRed,p.ColorBlue,p.ColorGreen  = rand.Float64(),rand.Float64(),rand.Float64()
 	}
 }
-func (p *Particle) randomScale(){
+func (p *Particle) scale(){
+	/*
+	This fonction change the scale of the particle between 75% & 125% before drawing it according to the setting
+	*/
 	if config.General.RandomScale{
-		p.ScaleX = 0.75 + rand.Float64() * (0.25)
-		p.ScaleY = 0.75 + rand.Float64() * (0.25)
+		p.ScaleX = 0.75 + rand.Float64() * (0.5)
+		p.ScaleY = 0.75 + rand.Float64() * (0.5)
 	}
 }
-func (p *Particle) randomOpacity(){
+func (p *Particle) opacity(){
+	/*
+	This fonction change the opacity of the particle between 30% & 100% before drawing it according to the setting
+	*/	
 	if config.General.RandomOpacity{
 		p.Opacity = 0.3 + rand.Float64() * 0.7
 	}
 }
-func (p *Particle) randomSpawn(){
+
+func (p *Particle) spawn(){
+	/*
+	This fonction change the spawn coordinates of the particle before drawing it according to the option 
+	(randomSpawn or Gamemode)
+	*/
 	if config.General.RandomSpawn{
 		p.PositionX = float64(rand.Intn(config.General.WindowSizeX - 10))
 		p.PositionY = float64(rand.Intn(config.General.WindowSizeY -10))
 	}
+	if config.General.Gamemod == "circle"{
+		x,y := ebiten.CursorPosition()
+		p.PositionX,p.PositionY = float64(x),float64(y)
+	}
 }
-func (p *Particle) randomRotation(){
+func (p *Particle) rotation(){
+	/*
+	This fonction change the axis of rotation of the particle before drawing it according to the setting
+	*/
 	//Rotation configuration 
 	if  config.General.RandomRotation{
 		p.Rotation = rand.Float64() 
 	}
 }
-func (p *Particle) SpeedMode(){}
+func (p *Particle) speed(){
+	/*
+	This fonction change the speed of the particle before drawing it according to the Gamemode
+	*/
+	if config.General.Gamemod == "circle"{
+		a :=rand.Float64() * 2 * math.Pi
+		p.SpeedX = math.Cos(a)  * 2
+		p.SpeedY = math.Sin(a)  * 2
+	}
+}
 
 //5.4
 //Methods to uptade the specs of a particle during its livespan
 func (p *Particle) updatePosition(){
-	//Update the position of a particle by adding the speed 
+	/*
+	Update the position of a particle by adding the speed
+	*/ 
 	p.PositionX += p.SpeedX
 	p.PositionY += p.SpeedY
 }
 func (p *Particle) updateRotation(){
+	/*
+	Update the rotation of the particle by adding a value
+	*/
 	p.Rotation += 0.08
 }
 func (p *Particle) updateOpacity(){
+	/*
+	Update the opacity of the particle: if the opacity of the particle is less than 1 it decreases it 
+	and if it is greater than 0 it increases it by adding/subtracting a value. The particle dies 
+	if the opacity goes below 0
+	*/
 	if config.General.OpacityManagementMode == 1 {
 		//increase Opacity
 		if p.Opacity < 1 {
@@ -88,10 +130,18 @@ func (p *Particle) updateOpacity(){
 	}
 }
 
-func (p *Particle) updateColor(){
-	
-}
+func (p *Particle) updateColor(){}
 
+//5.6
+func (p *Particle) revive(){
+	p.color() // choose random color for the particle if the option is set on true
+	p.opacity() //choose a random opacity between 30% and 100% if the option is set on true
+	p.scale() //choose a random scale x and y between 75% and 100% if the option is set on true
+	p.spawn() // Spawn choose randomly if the option is set on true
+	p.rotation() //choose a random Rotation if the option is set on true
+	p.speed() //change the speedtype depending on gamemod setting
+	p.Alive = true
+}
 
 
 

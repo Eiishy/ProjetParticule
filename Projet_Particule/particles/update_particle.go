@@ -20,9 +20,10 @@ func (p *Particle) update(){
 		p.updateLiveSpan()
 		//Opacity Management 
 		p.updateOpacity()
+
 		//Verify if the particle go out of the screen 
 		if p.PositionX > float64(config.General.WindowSizeX) +10 || p.PositionX < -10  ||p.PositionY > float64(config.General.WindowSizeY) +10  || p.PositionY < -10 {
-			p.Alive = false //Set the Alive parameter to false
+			p.Alive = false // And set the Alive parameter to false
 		}
 	}
 }

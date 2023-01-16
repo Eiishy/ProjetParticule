@@ -9,20 +9,23 @@ import (
 func (s *System) Update() {
 
 	//update each alive particle of the system and delete the others
-	for e := s.Content.Front(); e != nil; e = e.Next() {
+	for e := s.Content.Front(); e != nil;  {
 		p, ok :=e.Value.(*Particle)
+		next := e.Next()
 		if !ok {
 			continue
 		}
 		if p.Alive {
 			p.update()
 		}else {
-			go s.Content.Remove(e)
+			s.Content.Remove(e)
 		}
+		e = next 
 	}
 
 	//Generate more particles
-    s.spawnUpdate()
+	//by click or automaticaly according to the options choosen in the config.json
+	s.spawn()
 	
 	//to close the window with the escape key
 	if inpututil.IsKeyJustReleased(ebiten.KeyEscape){

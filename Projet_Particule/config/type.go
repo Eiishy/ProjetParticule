@@ -12,11 +12,12 @@ type Config struct {
 	WindowSizeX, WindowSizeY int
 	ParticleImage            string
 	Debug                    bool
+	OnClick 				 bool
 	InitNumParticles         int
 	NumMaxParticles 	     int
 	RandomSpawn              bool
 	SpawnRate                float64
-	Gamemod  			     int 
+	Gamemod  			     string //Circle , Basic , 
 	FullScreen 				 bool
 	Gravity 				 bool
 	LiveSpanActivator		 bool

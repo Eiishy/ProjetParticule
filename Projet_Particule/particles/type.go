@@ -8,6 +8,8 @@ import "container/list"
 type System struct {
 	Content *list.List
 	SpawnValue float64 
+	AliveParticleCounter int 
+	DeadParticleCounter int 
 }
 
 // Particle définit une particule.

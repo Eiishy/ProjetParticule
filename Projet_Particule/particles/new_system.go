@@ -14,6 +14,9 @@ func NewSystem() System {
 	And returns it to the main function of the project, which will display it
 	*/
 	rand.Seed(time.Now().UnixNano())
+	if config.General.Gamemod == "circle"{
+		circle()
+	}
 	s := System{Content: list.New()}
 	s.add_number(config.General.InitNumParticles)
 	return s
