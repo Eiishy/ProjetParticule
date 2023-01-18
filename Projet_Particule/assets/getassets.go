@@ -10,6 +10,8 @@ import (
 
 // ParticleImage est une variable globale pour stocker l'image d'une particule
 var ParticleImage *ebiten.Image
+var TorchImage *ebiten.Image
+var CrayonImage *ebiten.Image
 
 // Get charge en mémoire l'image de la particule. (particle.png)
 // Vous pouvez changer cette image si vous le souhaitez, et même en proposer
@@ -19,6 +21,14 @@ var ParticleImage *ebiten.Image
 func Get() {
 	var err error
 	ParticleImage, _, err = ebitenutil.NewImageFromFile(config.General.ParticleImage)
+	if err != nil {
+		log.Fatal("Problem while loading particle image: ", err)
+	}
+	TorchImage, _, err = ebitenutil.NewImageFromFile(config.General.TorchImage)
+	if err != nil {
+		log.Fatal("Problem while loading particle image: ", err)
+	}
+	CrayonImage, _, err = ebitenutil.NewImageFromFile(config.General.CrayonImage)
 	if err != nil {
 		log.Fatal("Problem while loading particle image: ", err)
 	}

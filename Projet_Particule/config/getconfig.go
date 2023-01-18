@@ -6,9 +6,10 @@ import (
 	"log"
 )
 
-// Get récupère le contenu du fichier config.json et le stocke dans la variable
-// General du package config. Normalement vous ne devriez jamais modifier cette
-// fonction.
+/* 
+Get retrieves the contents of the config.json file and stores it in the variable 
+General of the config package. Normally you should never change this function. 
+*/
 func Get(fileName string) {
 
 	content, err := ioutil.ReadFile(fileName)

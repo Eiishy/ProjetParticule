@@ -2,20 +2,24 @@ package particles
 
 import "container/list"
 
-// System définit un système de particules.
-// Pour le moment il ne contient qu'une liste de particules, mais cela peut
-// évoluer durant votre projet.
+// System defines a particle system.
+/* 
+At the moment it only contains a list of particles, but this can
+evolve during your project. 
+*/
 type System struct {
 	Content *list.List
 	SpawnValue float64 
-	AliveParticleCounter int 
-	DeadParticleCounter int 
+	Torch      *Torch
+	Crayon     *Crayon
 }
 
-// Particle définit une particule.
-// Elle possède une position, une rotation, une taille, une couleur, et une
-// opacité. Vous ajouterez certainement d'autres caractéristiques aux particules
-// durant le projet.
+// Particle defines a particle.
+/* 
+It has a position, rotation, size, color, and opacity. 
+You will certainly add other characteristics to the particles
+during the project. 
+*/
 type Particle struct {
 	PositionX, PositionY            float64
 	Rotation                        float64
@@ -23,6 +27,22 @@ type Particle struct {
 	ColorRed, ColorGreen, ColorBlue float64
 	Opacity                         float64
 	SpeedX,SpeedY 					float64
-	Alive 							bool //It indicates if the particle is Alive
+	Alive 							bool 
 	LiveSpan 						float64
+}
+
+//Torch define a torch
+/*
+It has only a positon x and  and sclae x and y*/
+type Torch struct{
+	PositionX, PositionY            float64
+	ScaleX, ScaleY                  float64
+}
+
+//Torch define a crayon
+/*
+It has only a positon x and  and sclae x and y*/
+type Crayon struct{
+	PositionX, PositionY            float64
+	ScaleX, ScaleY                  float64
 }

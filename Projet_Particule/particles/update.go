@@ -4,6 +4,7 @@ import (
 	"github.com/hajimehoshi/ebiten/v2"
 	"github.com/hajimehoshi/ebiten/v2/inpututil"
 	"os"
+	"project-particles/config"
 )
 
 func (s *System) Update() {
@@ -27,8 +28,16 @@ func (s *System) Update() {
 	//by click or automaticaly according to the options choosen in the config.json
 	s.spawn()
 	
+	
 	//to close the window with the escape key
 	if inpututil.IsKeyJustReleased(ebiten.KeyEscape){
 		os.Exit(0)
+	}
+
+	//Update the torch or pen according to the gamemod 
+	if config.General.Gamemod == "torch" {
+		s.update_torch()
+	}else if config.General.Gamemod == "paint"{
+		s.update_crayon()
 	}
 }

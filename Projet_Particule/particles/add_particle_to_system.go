@@ -1,11 +1,10 @@
 package particles
 
 
-//this function allows to add a Particle to the system
+//This function allows to add a Particle to the system
 func (s *System) add(){
-		p1 := newParticle()
-		s.Content.PushFront(&p1)
-		s.AliveParticleCounter += 1 	//Update the counter ou particles 
+		p := newParticle()
+		s.Content.PushFront(&p)
 	}
 
 //This function allows you to add a finite number of particles to the system
