@@ -1,22 +1,37 @@
 package config
 
-// Config définit les champs qu'on peut trouver dans un fichier de config.
-// Dans le fichier les champs doivent porter le même nom que dans le type si
-// dessous, y compris les majuscules. Tous les champs doivent obligatoirement
-// commencer par des majuscules, sinon il ne sera pas possible de récupérer
-// leurs valeurs depuis le fichier de config.
-// Vous pouvez ajouter des champs et ils seront automatiquement lus dans le
-// fichier de config. Vous devrez le faire plusieurs fois durant le projet.
+/*
+Config defines the fields that can be found in a config file.
+In the file the fields must have the same name as in the type if underneath, 
+including capital letters.  All fields must be required start with capital letters, 
+otherwise it will not be possible to recover their values from the config file. 
+You can add fields and they will be automatically read in the config file. 
+You will need to do this several times during the project. 
+*/
 type Config struct {
 	WindowTitle              string
 	WindowSizeX, WindowSizeY int
 	ParticleImage            string
+	TorchImage 				 string
+	CrayonImage 			 string
 	Debug                    bool
+	OnClick 				 bool
 	InitNumParticles         int
+	NumMaxParticles 	     int
 	RandomSpawn              bool
-	SpawnX, SpawnY           int
 	SpawnRate                float64
-	Gamemod  			     int 
+	Gamemod  			     string //Circle , Basic , 
+	FullScreen 				 bool
+	Gravity 				 bool
+	LiveSpanActivator		 bool
+	LiveSpan 				 float64
+	RandomColor 			 bool
+	RandomOpacity 			 bool
+	RandomScale  			 bool
+	OpacityManagementMode    int
+	RandomRotation			 bool
+	Bounce 					 bool
+	RightClickBlower 					 bool
 }
 
 var General Config

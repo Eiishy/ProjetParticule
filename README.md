@@ -1,63 +1,92 @@
 # R1.01.SAE.eq09_JESUS-Zacchary_ROBINEAU-Anton
 
 ## Name
-Project_Particule
+Project_Particle
 
 ## Description
-Création d'un générateur de particules dans le language go à l'aide d'un moteur 2D nommée Ebiten
+Creation of a particle generator in the go language using a 2D engine named Ebiten
 
-## Pré-requis
+## Pre-requisites
 - Golang - https://go.dev
 
-## Installation
-Installer le code source sur gitlab directement ou en passant par par le terminal avec la commande suivante :<br>
+## Setup
+Install the source code on gitlab directly or through the terminal with the following command:<br>
 ```
 git clone https://gitlab.univ-nantes.fr/pub/but/but1/r1.01/sae/projets/groupe2/r1.01.sae.eq09_jesus-zacchary_robineau-anton.git
 ```
-Une fois installer, il faudra ce rendre dans le terminal et aller dans le dossier installer auparavant et executer les commandes suivantes :
+Once installed, you will have to go to the terminal and go to the installer folder before and execute the following commands:
 ```
 go install
 go build
 ```
 
-## Execution
+## Run
 
- Si vous désirez lancer une génération de particule et que vous avez déjà accomplie les étapes précédentes, il ne vous reste plus qu'a lancer le fichier 'project-particles.exe'
+ If you want to launch a particle generation and you have already completed the previous steps, you just have to launch the file 'project-particles.exe'
 
 ## Test 
 
- Si vous désirez lancer le jeu de tests depuis le dossier particles dans la console executer la commande go test
- Le jeu de test evoluera au cours du developpement de ce projet 
-
+ If you want to run the test set from the particles folder in the console run the command go test
+ The test set will evolve during the development of this project 
 
 ## Config.json
-> ### <ins>Configuration de la fenêtre</ins>
-> - WindowTitle | Choisir le nom de la fenêtre.
-> - Debug | Activer l'affichage des informations en haut à gauche de l'écran (true/false)
-> - Fullscreen | Choisir si l'application se lance en plein écran (true/false) à venir
-> #### Taille de la fenêtre
-> - WindowSizeX | Longueur de la fenêtre (en pixel)
-> - WindowSizeY | Largeur de la fenêtre (en pixel)
-> ### <ins>Configuration des particules</ins>
-> - ParticleImage | L'image afficher pour les particules (chemin)
-> - SpawnRate | Nombre de particule a chaque appel de la fonction update(60/s)
-> - InitNumParticles | Le nombre de particule à l'écran au démarrage
-> - RandomSpawn | Apparition des particules à un endroit aléatoire (true/false)
+> ### <ins>Window configuration</ins>
+> - WindowTitle | Choose the name of the window.
+> - Debug | Activate the information display at the top left of the screen (true/false)
+> - Fullscreen | Choose if the application launches in full screen (true/false) coming soon
+> #### Window size
+> - WindowSizeX | Window length (in pixels)
+> - WindowSizeY | Window widht (in pixels)
+> ### <ins>System configuration</ins>
+> - OnClick |to create particles with the LeftClick (true/false)
+> - SpawnRate | Number of particles at each call of the update function(60/s)
+> - InitNumParticles | The number of particles on the screen at startup
+> - NumMaxParticles | The number of particles maximum
+> - Gravity | Adds a gravity effect to the particles (true/false)
+> - Bounce | To activate the bounces on the screen border (true/false)
+> - RightClickBlower | to strive the particles with RightCLick (true/false)
+> - LiveSpanActivator | Activates a lifetime for the particles (true/false)
+> - LiveSpan | Defines the lifetime of the particles (60 pour 1s)
+> ### <ins>Particle configuration</ins>
+> - RandomSpawn | Appearance of particles at a random location (true/false)
+> - RandomRotation | Choose a random inital rotation for particles true/false)
+> - RandomColor | Choose a random color for each particles (true/false)
+> - RandomOpacity | Choose a random opacity between 30% and 100% for each particles (true/false)
+> - RandomScale | Choose a random scale for each particles (true/false)
+> - OpacityManagementMode | 0 to no changement | 1 to increase opacity | 2 to decrease opacity 
+> ### <ins>Image configuration</ins>
+> - ParticleImage | Image display for particles (path)
+> - TorchImage | Image display for the torch in torch gamemod  (path)
+> - CrayonImage | Image display for the pen in paint gamemod  (path)
 > ### <ins>Gamemod</ins>
-> - 0 Pour des particules imobiles
-> - 1 Pour des particules avec une vitesse aléatoire 
-> - 2 Pour des particules qui forment un cercle mais necessite un RandomSpawn sur false et un InitNumParticle > 1000 pour un joli rendu 
-> #### Seulement quand RandomSpawn est false
-> - SpawnX | Gestion de la coordonnée X des particules au spawn (de 0 à longueur de la fenêtre en pixel)
-> - SpawnY | Gestion de la coordonnée Y des particules au spawn (de 0 à largeur de la fenêtre en pixel)
+> - "Basic" to have your personal configuration
+> - "buble" to create a buble with LeftClick and strive with RightClick
+> - "circle" to create circle with LeftClick and strive with RightClick
+> - "torch" Torch mod | SpaceKey to create fire 
+> - "paint" Draw mod | LeftClick to draw and C to clear 
 
-## Visuels
+## Visual
+
+### <ins>Basic gamemod</ins>
+
+![](/Projet_Particule/assets/screen5.png)
+
+### <ins>Buble gamemod</ins>
 
 ![](/Projet_Particule/assets/screen1.png)
 
+### <ins>Circle gamemod</ins>
 ![](/Projet_Particule/assets/screen2.png)
 
-Plus de visuels à venir
+### <ins>Torch gamemod</ins>
+![](/Projet_Particule/assets/screen3.png)
+
+### <ins>Paint gamemod</ins>
+![](/Projet_Particule/assets/screen4.png)
+
+
+## Authors
+Zacchary JESUS - Anton ROBINEAU
 
 ## Project status
-Ce projet est toujours en cours de développement.
+This project is still under development.
