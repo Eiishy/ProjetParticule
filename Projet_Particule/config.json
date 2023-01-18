@@ -5,10 +5,10 @@
 	"FullScreen": true,
 	"Debug": true,
 
-	"Gamemod"  : "circle",
+	"Gamemod"  : "paint",
 
 	"OnClick": false,
-	"SpawnRate": 100,
+	"SpawnRate": 10,
 
 	"InitNumParticles":0,
 	"NumMaxParticles" : 150000,

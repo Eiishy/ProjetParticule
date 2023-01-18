@@ -37,29 +37,56 @@ go build
 > #### Window size
 > - WindowSizeX | Window length (in pixels)
 > - WindowSizeY | Window widht (in pixels)
-> ### <ins>Particle configuration</ins>
-> - ParticleImage | Image display for particles (path)
+> ### <ins>System configuration</ins>
+> - OnClick |to create particles with the LeftClick (true/false)
 > - SpawnRate | Number of particles at each call of the update function(60/s)
 > - InitNumParticles | The number of particles on the screen at startup
-> - RandomSpawn | Appearance of particles at a random location (true/false)
+> - NumMaxParticles | The number of particles maximum
 > - Gravity | Adds a gravity effect to the particles (true/false)
+> - Bounce | To activate the bounces on the screen border (true/false)
+> - RightClickBlower | to strive the particles with RightCLick (true/false)
 > - LiveSpanActivator | Activates a lifetime for the particles (true/false)
 > - LiveSpan | Defines the lifetime of the particles (60 pour 1s)
+> ### <ins>Particle configuration</ins>
+> - RandomSpawn | Appearance of particles at a random location (true/false)
+> - RandomRotation | Choose a random inital rotation for particles true/false)
+> - RandomColor | Choose a random color for each particles (true/false)
+> - RandomOpacity | Choose a random opacity between 30% and 100% for each particles (true/false)
+> - RandomScale | Choose a random scale for each particles (true/false)
+> - OpacityManagementMode | 0 to no changement | 1 to increase opacity | 2 to decrease opacity 
+> ### <ins>Image configuration</ins>
+> - ParticleImage | Image display for particles (path)
+> - TorchImage | Image display for the torch in torch gamemod  (path)
+> - CrayonImage | Image display for the pen in paint gamemod  (path)
 > ### <ins>Gamemod</ins>
-> - 0 For immobile particles
-> - 1 For particles with random velocity 
-> - 2 For particles that form a circle but need a RandomSpawn on false and an InitNumParticle > 1000 for a nice result 
-> #### Only if RandomSpawn is false
-> - SpawnX | Management of the X coordinate of the particles in the spawn (from 0 to length of the window in pixel)
-> - SpawnY | Management of the Y coordinate of the particles in the spawn (from 0 to width of the window in pixel)
+> - "Basic" to have your personal configuration
+> - "buble" to create a buble with LeftClick and strive with RightClick
+> - "circle" to create circle with LeftClick and strive with RightClick
+> - "torch" Torch mod | SpaceKey to create fire 
+> - "paint" Draw mod | LeftClick to draw and C to clear 
 
 ## Visual
 
+### <ins>Basic gamemod</ins>
+
+![](/Projet_Particule/assets/screen5.png)
+
+### <ins>Buble gamemod</ins>
+
 ![](/Projet_Particule/assets/screen1.png)
 
+### <ins>Circle gamemod</ins>
 ![](/Projet_Particule/assets/screen2.png)
 
-More visuals to come
+### <ins>Torch gamemod</ins>
+![](/Projet_Particule/assets/screen3.png)
+
+### <ins>Paint gamemod</ins>
+![](/Projet_Particule/assets/screen4.png)
+
+
+## Authors
+Zacchary JESUS - Anton ROBINEAU
 
 ## Project status
 This project is still under development.

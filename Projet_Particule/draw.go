@@ -43,7 +43,7 @@ func (g *game) Draw(screen *ebiten.Image) {
 	if config.General.Gamemod == "paint"{
 		cop := ebiten.DrawImageOptions{}
 		ebitenutil.DebugPrintAt(screen, fmt.Sprint("Click to draw"),config.General.WindowSizeX/2-30,20,)
-		ebitenutil.DebugPrintAt(screen, fmt.Sprint("Push C To Clear"),config.General.WindowSizeX- 450,20,)
+		ebitenutil.DebugPrintAt(screen, fmt.Sprint("Push C To Clear"),config.General.WindowSizeX - 150,20,)
 		ebitenutil.DebugPrintAt(screen, fmt.Sprint("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"),0,90,)
 		cop.GeoM.Translate(g.system.Crayon.PositionX, g.system.Crayon.PositionY)
 		cop.GeoM.Scale(g.system.Crayon.ScaleX, g.system.Crayon.ScaleY)

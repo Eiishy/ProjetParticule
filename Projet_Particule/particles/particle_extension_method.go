@@ -127,7 +127,7 @@ func (p *Particle) updatePosition(){
 	And BlowerMode+BounceMode if they are activacted 
 	*/ 
 
-	//Blower mode devellopement 
+	//Blower mode developement (To spire the particles with RightClick)
 	if config.General.RightClickBlower{
 		if inpututil.MouseButtonPressDuration(ebiten.MouseButtonRight) > 0{
 

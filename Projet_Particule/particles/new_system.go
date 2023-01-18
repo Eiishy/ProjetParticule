@@ -15,6 +15,8 @@ func NewSystem() System {
 	And returns it to the main function of the project, which will display it
 	*/
 	rand.Seed(time.Now().UnixNano())
+
+	//Change the config file for each gamemod 
 	if config.General.Gamemod == "circle"{
 		circle()
 	}else if config.General.Gamemod == "torch"{
