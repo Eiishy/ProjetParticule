@@ -10,10 +10,8 @@ Creation of a particle generator in the go language using a 2D engine named Ebit
 - Golang - https://go.dev
 
 ## Setup
-Install the source code on gitlab directly or through the terminal with the following command:<br>
-```
-git clone https://gitlab.univ-nantes.fr/pub/but/but1/r1.01/sae/projets/groupe2/r1.01.sae.eq09_jesus-zacchary_robineau-anton.git
-```
+Install the source code on gitlab directly or through the terminal<br>
+
 Once installed, you will have to go to the terminal and go to the installer folder before and execute the following commands:
 ```
 go install
